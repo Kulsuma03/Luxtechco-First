@@ -12,8 +12,18 @@ export type apiData = {
     dateModified: string;
   }
 
+export type Activity = {
+    activity: string;
+    type: string;
+    participants: number;
+    price: number;
+    link: string;
+    key: string;
+    accessibility: number;
+}
+
 function useFetch(url: string) {
-    const [data, setData] = useState<null | apiData>(null);
+    const [data, setData] = useState<null | Activity>(null);
     const [error, setError] = useState<string | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
 

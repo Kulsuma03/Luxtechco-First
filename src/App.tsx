@@ -4,7 +4,7 @@ import Loading from './components/Loading/Loading';
 
 
 function App() {
-  const data = useFetch('http://api.quotable.io/random')
+  const data = useFetch('https://www.boredapi.com/api/activity')
   if(data.loading){
     return <Loading></Loading>
   }
@@ -14,10 +14,12 @@ function App() {
         <div className="container flex flex-col-reverse mx-auto lg:flex-row">
           <div className="px-6 py-8 space-y-6 rounded-sm sm:p-8 lg:p-12 lg:w-1/2 xl:w-2/5 bg-sky-100 text-gray-900">
             <div className="text-start p-4 md:p-8 lg:p-12">
-              <h2 className='text-center text-[#703BFC] text-3xl font-bold mb-5'> {data?.data?.author} </h2>
-              <p> {data?.data?.content} </p>
-              <p> {data?.data?.authorSlug} </p>
-              <p> {data?.data?.dateModified} </p>
+              <h2 className='text-center text-[#703BFC] text-3xl font-bold mb-5'> {data?.data?.activity} </h2>
+              <p> {data?.data?.participants} </p>
+              <p> {data?.data?.accessibility} </p>
+              <p> {data?.data?.price} </p>
+              <p> {data?.data?.link} </p>
+              <p> {data?.data?.key} </p>
             </div>
 
           </div>
